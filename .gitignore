@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# React build output
+build/
+**/build/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+**/venv/
+
+# Local environment files (keep .env.example files committed)
+.env
+**/.env
+!.env.example
+**/!.env.example
+
+# Test/cache files
+.pytest_cache/
+coverage/
+.DS_Store

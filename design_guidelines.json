@@ -1,0 +1,115 @@
+{
+  "app_name": "NTAXCO",
+  "theme_strategy": "Premium Corporate Fintech & Tax ERP. Professional, trustworthy, dynamic. Light theme dominant with strong Royal Blue anchor and vibrant Yellow accent.",
+  "colors": {
+    "primary": {
+      "DEFAULT": "#0A2540",
+      "light": "#1E3A8A",
+      "dark": "#051324"
+    },
+    "accent": {
+      "DEFAULT": "#FFB800",
+      "hover": "#E5A600"
+    },
+    "background": {
+      "light": "#F8FAFC",
+      "dark": "#0A2540",
+      "surface": "#FFFFFF"
+    },
+    "text": {
+      "primary": "#0F172A",
+      "secondary": "#475569",
+      "inverse": "#FFFFFF",
+      "accent": "#FFB800"
+    },
+    "border": "#E2E8F0"
+  },
+  "typography": {
+    "font_families": {
+      "heading": "Chivo, sans-serif",
+      "body": "IBM Plex Sans, sans-serif"
+    },
+    "scale": {
+      "h1": "text-5xl sm:text-6xl font-black tracking-tighter leading-tight",
+      "h2": "text-4xl font-bold tracking-tight",
+      "h3": "text-2xl font-bold tracking-tight",
+      "body_large": "text-lg leading-relaxed",
+      "body": "text-base leading-relaxed",
+      "small": "text-sm font-medium uppercase tracking-[0.2em]"
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": {
+      "light_mode": "bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-saturate-150",
+      "dark_mode": "bg-[#0A2540]/60 backdrop-blur-xl border border-white/10 shadow-2xl backdrop-saturate-150"
+    },
+    "buttons": {
+      "primary": "bg-[#FFB800] text-[#0A2540] font-bold rounded-md px-6 py-3 hover:bg-[#E5A600] transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5",
+      "secondary": "bg-[#0A2540] text-white font-semibold rounded-md px-6 py-3 hover:bg-[#1E3A8A] transition-colors shadow-md border border-[#1E3A8A]"
+    }
+  },
+  "layouts": {
+    "surface_1_unified_login_page": {
+      "type": "Split-screen Two-Column",
+      "left_panel_branding": "w-full lg:w-1/2 bg-[#0A2540] relative overflow-hidden flex flex-col justify-between p-12 text-white. Use Mumbai skyline image as absolute background with bg-[#0A2540]/80 mix-blend-multiply overlay. Content: Logo top left, bold value prop in center, live stats/services grid at bottom.",
+      "right_panel_auth": "w-full lg:w-1/2 bg-[#F8FAFC] flex items-center justify-center p-8. Use Glassmorphism card for the login container.",
+      "role_switcher": "Framer-motion powered animated tabs (Super Admin / Employee / Customer / Agent) with active state in Royal Blue and yellow indicator. Forms switch seamlessly (Email/Password vs Mobile/OTP)."
+    },
+    "surface_2_customer_marketing_homepage": {
+      "hero_section": "Generous spacing (py-32). Left text (h1 in Chivo, primary CTA, secondary CTA), Right dynamic image or dashboard mockup. Background subtle #F8FAFC.",
+      "trust_strip": "Logos of clients/partners in grayscale with low opacity, scrolling horizontally using react-fast-marquee.",
+      "services_grid": "Bento-style grid. Cards use white background, 1px border border-slate-200, hover:shadow-xl transition-all.",
+      "statistics": "Dark section (bg-[#0A2540]). Big numbers in #FFB800, text in white.",
+      "testimonials": "Masonry or carousel layout. Cards with glassmorphism over a subtle abstract background.",
+      "team_and_gallery": "High-quality corporate imagery, sharp corners or very subtle rounding (rounded-md) to maintain enterprise seriousness.",
+      "footer": "Deep blue bg-[#051324] with golden accents for links."
+    },
+    "surface_3_ai_tax_copilot": {
+      "placement": "Floating panel bottom-right, distinct from WhatsApp button.",
+      "container": "w-[380px] h-[600px] shadow-2xl rounded-2xl overflow-hidden flex flex-col bg-white border border-slate-200.",
+      "header": "bg-[#0A2540] text-white p-4 flex items-center gap-3. AI Avatar icon, status indicator.",
+      "chat_body": "bg-slate-50 p-4 space-y-4 overflow-y-auto. User bubbles: bg-[#0A2540] text-white. AI bubbles: bg-white text-slate-800 border border-slate-200.",
+      "input_area": "p-4 bg-white border-t border-slate-100. Modern rounded input, send button in #FFB800."
+    }
+  },
+  "motion": {
+    "framer_motion": {
+      "page_transitions": "initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: 'easeOut' }}",
+      "stagger_children": "transition={{ staggerChildren: 0.1 }}",
+      "hover_effects": "whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}"
+    },
+    "micro_interactions": "Smooth tab switching for Login role selector using layoutId from framer-motion."
+  },
+  "accessibility": {
+    "contrast": "Ensure #0F172A text on #F8FAFC background. Check yellow #FFB800 buttons use dark text #0A2540 for contrast (WCAG AA).",
+    "focus": "focus:outline-none focus:ring-2 focus:ring-[#FFB800] focus:ring-offset-2",
+    "test_attributes": "All interactive elements MUST have data-testid attributes (e.g., login-submit-button, hero-cta-btn)."
+  },
+  "media": {
+    "image_urls": [
+      {
+        "url": "https://images.pexels.com/photos/5414582/pexels-photo-5414582.jpeg",
+        "category": "Login Page Background",
+        "description": "Mumbai skyline night view. Use with deep blue overlay for login left panel."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwyfHxjb3Jwb3JhdGUlMjBmaW5hbmNlJTIwbWVldGluZ3xlbnwwfHx8fDE3ODU4MjEyMDF8MA&ixlib=rb-4.1.0&q=85",
+        "category": "Hero / Services",
+        "description": "Corporate finance meeting. Good for marketing home hero or consulting service card."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjb25zdWx0YW50JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzg1ODIxMjAxfDA&ixlib=rb-4.1.0&q=85",
+        "category": "Team / Testimonials",
+        "description": "Professional consultant portrait."
+      }
+    ]
+  },
+  "instructions_to_main_agent": {
+    "1": "Implement the split-screen login page strictly using the provided layout and color tokens. Add the role switcher using framer-motion.",
+    "2": "For the Marketing Home, construct the required sections (Hero, Services, Stats, Testimonials, Team, Projects, Contact, Footer) in a premium enterprise style. Avoid generic center-aligned bootstrap-style layouts.",
+    "3": "Implement a Chat interface component for the AI Tax Copilot, styled as a premium widget.",
+    "4": "Make sure all headings use Chivo font and body uses IBM Plex Sans.",
+    "5": "Do not break existing React/CRA/Tailwind setup. Only add/update files inside /frontend/src."
+  },
+  "universal_guidelines": "Do not use 'transition: all'. Apply specific transitions. DO NOT center align the app container. Create depth with z-index hierarchy. Ensure generous spacing. Add data-testid to all interactive elements."
+}

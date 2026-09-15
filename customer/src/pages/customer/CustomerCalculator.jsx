@@ -658,6 +658,9 @@ function RecentCalculations({ history, onClear }) {
 /* =========================================================
    Customer Calculator
 ========================================================= */
+/* =========================================================
+   Customer Calculator - Page Layout
+========================================================= */
 
 export default function CustomerCalculator() {
   const [activeTab, setActiveTab] = useState("normal");
@@ -681,77 +684,130 @@ export default function CustomerCalculator() {
     setHistory([]);
   }, []);
 
+  const calculatorTabs = [
+    {
+      id: "normal",
+      title: "Normal Calculator",
+      shortTitle: "Calculator",
+    },
+    {
+      id: "gst",
+      title: "GST Calculator",
+      shortTitle: "GST",
+    },
+    {
+      id: "income-tax",
+      title: "Income Tax",
+      shortTitle: "Income Tax",
+    },
+    {
+      id: "tds",
+      title: "TDS",
+      shortTitle: "TDS",
+    },
+    {
+      id: "emi",
+      title: "EMI",
+      shortTitle: "EMI",
+    },
+  ];
+
   return (
-    <div className="customer-calculator">
-      <div className="calculator-tabs">
-        <button
-          type="button"
-          className={activeTab === "normal" ? "active" : ""}
-          onClick={() => setActiveTab("normal")}
-        >
-          Normal Calculator
-        </button>
+    <div className="customer-calculator-page">
 
-        <button
-          type="button"
-          className={activeTab === "gst" ? "active" : ""}
-          onClick={() => setActiveTab("gst")}
-        >
-          GST Calculator
-        </button>
+      {/* Page Header */}
+      <div className="calculator-page-header">
+        <div>
+          <span className="calculator-page-label">
+            FINANCIAL TOOLS
+          </span>
 
-        <button
-          type="button"
-          className={activeTab === "income-tax" ? "active" : ""}
-          onClick={() => setActiveTab("income-tax")}
-        >
-          Income Tax
-        </button>
+          <h1>Calculator</h1>
 
-        <button
-          type="button"
-          className={activeTab === "tds" ? "active" : ""}
-          onClick={() => setActiveTab("tds")}
-        >
-          TDS
-        </button>
-
-        <button
-          type="button"
-          className={activeTab === "emi" ? "active" : ""}
-          onClick={() => setActiveTab("emi")}
-        >
-          EMI
-        </button>
+          <p>
+            Quickly calculate GST, income tax, TDS, EMI and more.
+          </p>
+        </div>
       </div>
 
-      <div className="calculator-content">
-        {activeTab === "normal" && (
-          <NormalCalculator onCalculated={handleCalculated} />
-        )}
+      {/* Main Calculator Area */}
+      <div className="calculator-main-card">
 
-        {activeTab === "gst" && (
-          <GstCalculator onCalculated={handleCalculated} />
-        )}
+        {/* Calculator Tabs */}
+        <div className="calculator-tabs-wrapper">
 
-        {activeTab === "income-tax" && (
-          <IncomeTaxCalculator onCalculated={handleCalculated} />
-        )}
+          <div className="calculator-tabs">
 
-        {activeTab === "tds" && (
-          <TdsCalculator onCalculated={handleCalculated} />
-        )}
+            {calculatorTabs.map((tab) => (
+              <button
+                type="button"
+                key={tab.id}
+                className={
+                  activeTab === tab.id ? "active" : ""
+                }
+                onClick={() => setActiveTab(tab.id)}
+              >
+                <span className="calculator-tab-desktop">
+                  {tab.title}
+                </span>
 
-        {activeTab === "emi" && (
-          <EmiCalculator onCalculated={handleCalculated} />
-        )}
+                <span className="calculator-tab-mobile">
+                  {tab.shortTitle}
+                </span>
+              </button>
+            ))}
+
+          </div>
+
+        </div>
+
+        {/* Calculator Content */}
+        <div className="calculator-content">
+
+          {activeTab === "normal" && (
+            <NormalCalculator
+              onCalculated={handleCalculated}
+            />
+          )}
+
+          {activeTab === "gst" && (
+            <GstCalculator
+              onCalculated={handleCalculated}
+            />
+          )}
+
+          {activeTab === "income-tax" && (
+            <IncomeTaxCalculator
+              onCalculated={handleCalculated}
+            />
+          )}
+
+          {activeTab === "tds" && (
+            <TdsCalculator
+              onCalculated={handleCalculated}
+            />
+          )}
+
+          {activeTab === "emi" && (
+            <EmiCalculator
+              onCalculated={handleCalculated}
+            />
+          )}
+
+        </div>
+
       </div>
 
-      <RecentCalculations
-        history={history}
-        onClear={clearHistory}
-      />
+      {/* Recent Calculations */}
+      <div className="calculator-history-card">
+
+        <RecentCalculations
+          history={history}
+          onClear={clearHistory}
+        />
+
+      </div>
+
     </div>
   );
 }
-
